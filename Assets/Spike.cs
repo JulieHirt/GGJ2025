@@ -17,8 +17,10 @@ public class Spike : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("collided");
-        //Call the win function from gameManager which loads the win scene
-        gameManager.Lose();
+        if (col.gameObject.CompareTag("Player"))
+        {
+            //Call the lose function from gameManager which loads the lose scene
+            gameManager.Lose();
+        }
     }
 }
