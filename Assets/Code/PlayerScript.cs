@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour
                 rb.AddForce(Vector2.right * moveSpeed);
             }
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             if (rb.linearVelocityX > sideMaxSpeed || Mathf.Abs(rb.linearVelocityX) < sideMaxSpeed)
             {
