@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
+    public float moveSpeed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +16,11 @@ public class PlayerScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            
+            rb.AddForce(Vector2.right * moveSpeed);
+        }
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            rb.AddForce(Vector2.left * moveSpeed);
         }
     }
 

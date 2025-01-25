@@ -334,6 +334,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1498865461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6129537175450019489, guid: 19ea68233289a784ea80ee13fcc848ec, type: 3}
+  m_PrefabInstance: {fileID: 7472517681587054904}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1498865462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498865461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 500a5910b82e84647b830cb775b82df1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  moveSpeed: 10
 --- !u!1001 &2240211520313629202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -407,11 +426,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2760610109595029020, guid: 19ea68233289a784ea80ee13fcc848ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.85
+      value: -1.98
       objectReference: {fileID: 0}
     - target: {fileID: 2760610109595029020, guid: 19ea68233289a784ea80ee13fcc848ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.43
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 2760610109595029020, guid: 19ea68233289a784ea80ee13fcc848ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -452,7 +471,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6129537175450019489, guid: 19ea68233289a784ea80ee13fcc848ec, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1498865462}
   m_SourcePrefab: {fileID: 100100000, guid: 19ea68233289a784ea80ee13fcc848ec, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
