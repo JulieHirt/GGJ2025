@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
     public float downSpeed;
     public float sideMaxSpeed;
     public float maxBounceSpeed;
+    public float highBounceSpeed;
 
     Rigidbody2D rb;
     bool pressedSpace = false;
@@ -38,7 +39,7 @@ public class PlayerScript : MonoBehaviour
                 rb.AddForce(Vector2.right * moveSpeed);
             }
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             if (rb.linearVelocityX > sideMaxSpeed || Mathf.Abs(rb.linearVelocityX) < sideMaxSpeed)
             {
@@ -64,7 +65,8 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "BounceBubble")
+        
+        if (col.gameObject.tag == "BounceBubble" || col.gameObject.tag == "BounceBubbleHigh")
         {
             //Rigidbody2D playerRb = col.gameObject.GetComponent<Rigidbody2D>();
             Vector2 playerVector = rb.linearVelocity;
@@ -72,8 +74,12 @@ public class PlayerScript : MonoBehaviour
             Vector2 direction = transform.position - col.gameObject.transform.position;
             direction *= playerVector.magnitude;
 
+            if(col.gameObject.tag == "BounceBubbleHigh")
+            {
+                direction *= highBounceSpeed;
+            }
+            Debug.Log("Collision detected, tag is " + col.gameObject.tag);
             rb.linearVelocity = direction;
-            Debug.Log("bubble changed player velocity");
             Destroy(col.gameObject);
         }
 
