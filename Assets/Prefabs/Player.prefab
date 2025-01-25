@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2760610109595029020}
   - component: {fileID: 7487710899688462806}
   - component: {fileID: 4467719924827615667}
-  - component: {fileID: 2869951236622255421}
+  - component: {fileID: 7333973609985380385}
   - component: {fileID: 1549872460351442526}
   m_Layer: 0
   m_Name: Player
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.128738, y: -0.44715703, z: 0}
-  m_LocalScale: {x: 1, y: 1.0235, z: 1}
+  m_LocalScale: {x: 0.4045, y: 0.41400576, z: 0.4045}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -5712959122012955994, guid: dcd777efd8ef545c1b21d3901fbee5b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &2869951236622255421
+--- !u!58 &7333973609985380385
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +152,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 1.0416667
 --- !u!114 &1549872460351442526
 MonoBehaviour:
   m_ObjectHideFlags: 0
