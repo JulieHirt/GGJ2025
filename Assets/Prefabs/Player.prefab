@@ -106,16 +106,16 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: b6c17180c44013343a77afc34294f49e, type: 2}
+  m_Material: {fileID: 6200000, guid: 811c609b383dd8d4699f134ec6b16d9e, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!58 &7333973609985380385
 CircleCollider2D:
@@ -168,4 +168,4 @@ MonoBehaviour:
   moveSpeed: 20
   downSpeed: 40
   sideMaxSpeed: 10
-  bounceMinimzeAmount: 1.6
+  maxBounceSpeed: 10
