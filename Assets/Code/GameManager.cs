@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager
+public class GameManager:MonoBehaviour
 {
     public void Lose()
     {
