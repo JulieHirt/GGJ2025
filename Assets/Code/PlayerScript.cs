@@ -1,10 +1,13 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
     public float moveSpeed;
+    public float downSpeed;
 
     Rigidbody2D rb;
+    bool pressedSpace = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +18,10 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            pressedSpace = true;
+        }
     }
 
     private void FixedUpdate()
@@ -28,5 +34,14 @@ public class PlayerScript : MonoBehaviour
         {
             rb.AddForce(Vector2.left * moveSpeed);
         }
+
+        if (pressedSpace == true)
+        {
+            rb.linearVelocityX = 0;
+            rb.linearVelocityY = downSpeed;
+            pressedSpace = false;
+        }
     }
+
+
 }
