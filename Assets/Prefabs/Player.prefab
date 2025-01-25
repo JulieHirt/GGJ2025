@@ -168,4 +168,4 @@ MonoBehaviour:
   moveSpeed: 7
   downSpeed: 14
   sideMaxSpeed: 3
-  maxBounceSpeed: 10
+  maxBounceSpeed: 8
