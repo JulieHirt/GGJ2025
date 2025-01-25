@@ -29,7 +29,6 @@
 #extra files from game jam
 .vsconfig
 .vscode
-ProjectSettings/EditorBuildSettings.asset
 
 # Gradle cache directory
 .gradle/
