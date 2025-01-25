@@ -28,11 +28,6 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D()
-    {
-
-    }
-
     private void FixedUpdate()
     {
 
@@ -51,7 +46,7 @@ public class PlayerScript : MonoBehaviour
             }
         }
 
-        
+
         if (pressedSpace == true)
         {
             rb.linearVelocityY = -downSpeed;
@@ -60,11 +55,28 @@ public class PlayerScript : MonoBehaviour
         }
 
         // BRUTE FORCING THE BUBBLE TO SLOW DOWN IF IT'S TOO FAST.  AGHHHHHH
-        if(rb.linearVelocity.y > maxBounceSpeed)
+        if (rb.linearVelocity.y > maxBounceSpeed)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, maxBounceSpeed);
             //rb.linearVelocity.y = maxBounceSpeed;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "BounceBubble")
+        {
+            //Rigidbody2D playerRb = col.gameObject.GetComponent<Rigidbody2D>();
+            Vector2 playerVector = rb.linearVelocity;
+
+            Vector2 direction = transform.position - col.gameObject.transform.position;
+            direction *= playerVector.magnitude;
+
+            rb.linearVelocity = direction;
+            Debug.Log("bubble changed player velocity");
+            Destroy(col.gameObject);
+        }
 
     }
+
 }
