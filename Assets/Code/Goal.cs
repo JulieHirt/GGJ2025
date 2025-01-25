@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Goal : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class Goal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("upate");
+    }
+
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("collided");
     }
 }
