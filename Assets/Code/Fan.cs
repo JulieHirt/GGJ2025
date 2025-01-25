@@ -26,10 +26,12 @@ public class Fan : MonoBehaviour
     {
         //Debug.Log("entered trigger");
         //apply a force
-       
 
-        Rigidbody2D rig = collision.GetComponent<Rigidbody2D>();
-        rig.AddForce(new Vector3(0,1,0)*magnitude, ForceMode2D.Impulse);
+        if (collision.gameObject.tag == "Player")
+        {
+            Rigidbody2D rig = collision.GetComponent<Rigidbody2D>();
+            rig.AddForce(new Vector3(0, 1, 0) * magnitude, ForceMode2D.Impulse);
+        }
 
         //Debug.Log(Vector3.forward * magnitude);
         //Debug.Log(rig.gameObject);
