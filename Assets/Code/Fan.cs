@@ -5,7 +5,7 @@ public class Fan : MonoBehaviour
 {
     //magnitude of the force emitted by the fan. 
     //increases the longer the object is within range of the fan
-    private float magnitude = 5f;
+    private float magnitude = 1f;
 
     //cap the force magnitude at this value, it cannot get bigger than this
     public float maxMagnitude;
@@ -26,10 +26,12 @@ public class Fan : MonoBehaviour
     {
         //Debug.Log("entered trigger");
         //apply a force
-       
 
-        Rigidbody2D rig = collision.GetComponent<Rigidbody2D>();
-        rig.AddForce(new Vector3(0,1,0)*magnitude, ForceMode2D.Impulse);
+        if (collision.gameObject.tag == "Player")
+        {
+            Rigidbody2D rig = collision.GetComponent<Rigidbody2D>();
+            rig.AddForce(new Vector3(0, 1, 0) * magnitude, ForceMode2D.Impulse);
+        }
 
         //Debug.Log(Vector3.forward * magnitude);
         //Debug.Log(rig.gameObject);
@@ -38,13 +40,25 @@ public class Fan : MonoBehaviour
     }
 
 
-    //void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    Debug.Log("stay in trigger");
-    //    if(magnitude < maxMagnitude)
-    //    {
-    //        magnitude += .5f;
-    //        Debug.Log("increase magnitude to"+magnitude);
-    //    }
-    //}
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            ///////////////////////////////////////////calculate the magnitude
+            if (magnitude < maxMagnitude)
+            {
+                magnitude += .01f;
+            }
+            else if (magnitude >= maxMagnitude)
+            {
+                magnitude = maxMagnitude;
+            }
+            //////////////////////////////////////calculate the angle
+            Quaternion myRotation = transform.rotation;
+            //////////////////////////Apply force
+            Rigidbody2D rig = collision.GetComponent<Rigidbody2D>();
+            rig.AddForce(myRotation * new Vector3(0, 1, 0) * magnitude, ForceMode2D.Impulse);
+
+        }
+    }
 }

@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    public GameManager gameManager;
+    GameManager gameManager;
+
+    public void Awake()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
