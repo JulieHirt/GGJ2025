@@ -7,6 +7,8 @@ public class ReduceSize : MonoBehaviour
     private Vector3 scaleChange;
     public GameObject Player;
     public float playerScale;
+    public bool isTrigger = true;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +25,7 @@ public class ReduceSize : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         GameObject.Find("Player");
         Player.transform.localScale = scaleChange * playerScale;
