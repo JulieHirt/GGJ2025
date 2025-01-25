@@ -40,7 +40,7 @@ public class Fan : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("stay in trigger");
+        ///////////////////////////////////////////calculate the magnitude
         if (magnitude < maxMagnitude)
         {
             magnitude += .01f;
@@ -49,8 +49,11 @@ public class Fan : MonoBehaviour
         {
             magnitude = maxMagnitude;
         }
+        //////////////////////////////////////calculate the angle
+        Quaternion myRotation = transform.rotation;
+        //////////////////////////Apply force
         Rigidbody2D rig = collision.GetComponent<Rigidbody2D>();
-        rig.AddForce(new Vector3(0, 1, 0) * magnitude, ForceMode2D.Impulse);
+        rig.AddForce(myRotation*new Vector3(0, 1, 0) * magnitude, ForceMode2D.Impulse);
 
     }
 }
