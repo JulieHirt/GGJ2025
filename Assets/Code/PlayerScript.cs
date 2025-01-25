@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.AssetImporters;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -14,7 +13,6 @@ public class PlayerScript : MonoBehaviour
     //public PhysicsMaterial2D highBounceMat;
     //public PhysicsMaterial2D lowBounceMat;
 
-    bool slammingDown = false;
     //Vector2 lastSpeed;
 
     Rigidbody2D rb;
@@ -86,7 +84,6 @@ public class PlayerScript : MonoBehaviour
             rb.linearVelocityY = -downSpeed;
             pressedSpace = false;
             GetComponent<Collider2D>().isTrigger = true;
-            slammingDown = true;
         }
 
     }
