@@ -2,8 +2,9 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    public Rigidbody2D rb;
     public float moveSpeed;
+
+    Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,6 +15,11 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    private void FixedUpdate()
+    {
         if (Input.GetKey(KeyCode.RightArrow))
         {
             rb.AddForce(Vector2.right * moveSpeed);
@@ -22,10 +28,5 @@ public class PlayerScript : MonoBehaviour
         {
             rb.AddForce(Vector2.left * moveSpeed);
         }
-    }
-
-    private void FixedUpdate()
-    {
-        
     }
 }
