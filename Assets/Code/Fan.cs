@@ -5,10 +5,10 @@ public class Fan : MonoBehaviour
 {
     //magnitude of the force emitted by the fan. 
     //increases the longer the object is within range of the fan
-    private float magnitude = 5f;
+    private float magnitude = 1f;
 
     //cap the force magnitude at this value, it cannot get bigger than this
-    public float maxMagnitude;
+    public float maxMagnitude = 5;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,13 +38,15 @@ public class Fan : MonoBehaviour
     }
 
 
-    //void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    Debug.Log("stay in trigger");
-    //    if(magnitude < maxMagnitude)
-    //    {
-    //        magnitude += .5f;
-    //        Debug.Log("increase magnitude to"+magnitude);
-    //    }
-    //}
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("stay in trigger");
+        if (magnitude < maxMagnitude)
+        {
+            magnitude += .5f;
+            Debug.Log("increase magnitude to" + magnitude);
+        }
+        Rigidbody2D rig = collision.GetComponent<Rigidbody2D>();
+        rig.AddForce(new Vector3(0, 1, 0) * magnitude, ForceMode2D.Impulse);
+    }
 }
