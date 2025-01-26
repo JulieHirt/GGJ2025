@@ -24,7 +24,7 @@ public class GameManager:MonoBehaviour
 
     public void Win()
     {
-        int numLevels = 5;//the number of levels in the game
+        int numLevels = 8;//the number of levels in the game
         levelNum += 1;
         string sceneName = "Level"+levelNum.ToString();
 
