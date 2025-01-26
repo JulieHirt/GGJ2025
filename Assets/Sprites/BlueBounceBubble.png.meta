@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BlueBounceBubble_0: 3963627463834326210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
