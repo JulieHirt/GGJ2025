@@ -101,6 +101,13 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(DisableBouncingBool(animationTime));
     }
 
+    public void ActivatePopAnimation()
+    {
+        theAnimator.SetBool("isPopped", true);
+        float animationTime = theAnimator.GetCurrentAnimatorStateInfo(0).length;
+        StartCoroutine(DisablePoppedBool(animationTime));
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Platform")
