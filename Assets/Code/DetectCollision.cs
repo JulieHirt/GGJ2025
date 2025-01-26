@@ -7,16 +7,16 @@ public class DetectCollision : MonoBehaviour
 {
     private Vector3 scaleChange;
     public GameObject Player;
-    public float playerScale;
     public bool isTrigger = true;
+
+    public float playerScale;
 
     private void Start()
     {  
         
         Player = GameObject.Find("Player"); 
-        scaleChange = new Vector3 (1.5f, 1.5f, 1.5f);
-        playerScale = transform.localScale.x;
-        playerScale = transform.localScale.y;
+        scaleChange = new Vector3 (playerScale, playerScale, playerScale);
+        
        
        
 
@@ -37,7 +37,7 @@ public class DetectCollision : MonoBehaviour
         GameObject.Find("Player");
 
        
-        Player.transform.localScale = playerScale * scaleChange;
+        Player.transform.localScale = scaleChange;
 
         Destroy(gameObject);
     }
