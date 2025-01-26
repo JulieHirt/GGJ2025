@@ -1877,8 +1877,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -503, y: 405}
-  m_SizeDelta: {x: 736.068, y: 38.194}
+  m_AnchoredPosition: {x: -21.1133, y: 396.1172}
+  m_SizeDelta: {x: 1699.8413, y: 55.9595}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118148249
 MonoBehaviour:
@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bubble
+  m_text: SuperBubble Parkour
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a1af5d6f733c9a54090c185c20ac7b51, type: 2}
   m_sharedMaterial: {fileID: 2597440501326109189, guid: a1af5d6f733c9a54090c185c20ac7b51, type: 2}
@@ -1927,8 +1927,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 226.44
-  m_fontSizeBase: 226.44
+  m_fontSize: 150
+  m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
