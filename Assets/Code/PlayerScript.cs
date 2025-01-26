@@ -11,10 +11,14 @@ public class PlayerScript : MonoBehaviour
     public float maxBounceSpeed;
     public float highBounceSpeed;
 
+    public AudioClip bounceSound;
+    public AudioClip downSound;
+
     Rigidbody2D rb;
     bool pressedSpace = false;
     Animator theAnimator;
-    string state = "normal"; // states are normal, bouncing, popped.
+    AudioSource audioS;
+    //string state = "normal"; // states are normal, bouncing, popped.
                              // normal -> bouncing -> normal.  or normal -> popped  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,6 +26,7 @@ public class PlayerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         theAnimator = GetComponent<Animator>();
+        audioS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,7 +62,9 @@ public class PlayerScript : MonoBehaviour
         if (pressedSpace == true)
         {
             rb.linearVelocityY = -downSpeed;
-            state = "bouncing";
+            //state = "bouncing";
+            audioS.clip = downSound;
+            audioS.Play();
 
             pressedSpace = false;
             //GetComponent<Collider2D>().isTrigger = true;
@@ -73,6 +80,8 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        audioS.clip = bounceSound;
+        audioS.Play();
 
         if (col.gameObject.tag == "BounceBubble" || col.gameObject.tag == "BounceBubbleHigh")
         {
@@ -109,7 +118,10 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag != "Spike")
+        audioS.clip = bounceSound;
+        audioS.Play();
+
+        if (collision.gameObject.tag != "Spike")
         {
             ActivateBounceAnimation();
         }
