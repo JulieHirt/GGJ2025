@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 
@@ -8,6 +9,7 @@ public class DetectCollision : MonoBehaviour
     private Vector3 scaleChange;
     public GameObject Player;
     public float playerScale;
+    public bool isTrigger = true;
 
     private void Start()
     {  
@@ -16,6 +18,8 @@ public class DetectCollision : MonoBehaviour
         scaleChange = new Vector3 (1.5f, 1.5f, 1.5f);
         playerScale = transform.localScale.x;
         playerScale = transform.localScale.y;
+       
+       
 
     }
 
@@ -28,21 +32,13 @@ public class DetectCollision : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D coll)
+    private void OnTriggerEnter2D (Collider2D other)
     {
-        Debug.Log("detect");
+        
         GameObject.Find("Player");
 
-        {
-            Debug.Log("found"); 
-        }
-
+       
         Player.transform.localScale = playerScale * scaleChange;
-
-        {
-            Debug.Log(scaleChange);
-            Debug.Log(playerScale);
-        }
 
         Destroy(gameObject);
     }
