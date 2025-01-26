@@ -42,20 +42,23 @@ public class Fan : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D collision)
     {
-        ///////////////////////////////////////////calculate the magnitude
-        if (magnitude < maxMagnitude)
+        if (collision.gameObject.tag == "Player")
         {
-            magnitude += .01f;
-        }
-        else if(magnitude >= maxMagnitude)
-        {
-            magnitude = maxMagnitude;
-        }
-        //////////////////////////////////////calculate the angle
-        Quaternion myRotation = transform.rotation;
-        //////////////////////////Apply force
-        Rigidbody2D rig = collision.GetComponent<Rigidbody2D>();
-        rig.AddForce(myRotation*new Vector3(0, 1, 0) * magnitude, ForceMode2D.Impulse);
+            ///////////////////////////////////////////calculate the magnitude
+            if (magnitude < maxMagnitude)
+            {
+                magnitude += .01f;
+            }
+            else if (magnitude >= maxMagnitude)
+            {
+                magnitude = maxMagnitude;
+            }
+            //////////////////////////////////////calculate the angle
+            Quaternion myRotation = transform.rotation;
+            //////////////////////////Apply force
+            Rigidbody2D rig = collision.GetComponent<Rigidbody2D>();
+            rig.AddForce(myRotation * new Vector3(0, 1, 0) * magnitude, ForceMode2D.Impulse);
 
+        }
     }
 }
