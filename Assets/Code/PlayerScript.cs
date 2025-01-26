@@ -109,11 +109,11 @@ public class PlayerScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Platform")
+        if(collision.gameObject.tag != "Spike")
         {
             ActivateBounceAnimation();
         }
-        else
+        else if(collision.gameObject.tag == "Spike")
         {
             theAnimator.SetBool("isPopped", true);
             ActivatePopAnimation();
