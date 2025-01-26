@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6ed186f7dba370346a4c7c826f8bc2d6
+guid: c036ef897cac549a6b03e26f6edf0bc6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7042847911465117151
-    second: menu_0
+      213: 4128064738326349207
+    second: Background_01_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menu_0
+      name: Background_01_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd5eaf16cd83db160800000000000000
-      internalID: 7042847911465117151
+      spriteID: 79502c11205d94930800000000000000
+      internalID: 4128064738326349207
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      menu_0: 7042847911465117151
+      Background_01_0: 4128064738326349207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

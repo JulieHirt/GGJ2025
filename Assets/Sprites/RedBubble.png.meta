@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6ed186f7dba370346a4c7c826f8bc2d6
+guid: be3ec60cf1dc740d480cc51f67e1b312
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7042847911465117151
-    second: menu_0
+      213: -553527728694553673
+    second: RedBubble_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 350
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,8 +72,8 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
-    resizeAlgorithm: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: menu_0
+      name: RedBubble_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 3840
-        height: 2160
+        y: 13
+        width: 512
+        height: 487
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd5eaf16cd83db160800000000000000
-      internalID: 7042847911465117151
+      spriteID: 7b315d5a6797158f0800000000000000
+      internalID: -553527728694553673
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      menu_0: 7042847911465117151
+      RedBubble_0: -553527728694553673
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

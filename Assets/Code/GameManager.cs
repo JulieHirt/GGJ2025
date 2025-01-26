@@ -3,6 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager:MonoBehaviour
 {
+    private int levelNum = 1;
+    public void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     public void Lose()
     {
         //reload the scene when player loses
@@ -11,7 +16,18 @@ public class GameManager:MonoBehaviour
 
     public void Win()
     {
-        SceneManager.LoadScene("Win");
+        levelNum += 1;
+        string sceneName = "Level"+levelNum.ToString();
+
+        try
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        catch
+        {
+            //TODO: Load the win scene if all levels are beaten
+            //SceneManager.LoadScene("Win");
+        }
     }
 
     public void Update()
