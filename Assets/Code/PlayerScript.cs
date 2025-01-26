@@ -104,8 +104,7 @@ public class PlayerScript : MonoBehaviour
     public void ActivatePopAnimation()
     {
         theAnimator.SetBool("isPopped", true);
-        float animationTime = theAnimator.GetCurrentAnimatorStateInfo(0).length;
-        StartCoroutine(DisablePoppedBool(animationTime));
+        StartCoroutine(DestroyPlayer());
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -117,6 +116,7 @@ public class PlayerScript : MonoBehaviour
         else
         {
             theAnimator.SetBool("isPopped", true);
+            ActivatePopAnimation();
         }
   
     }
@@ -125,6 +125,12 @@ public class PlayerScript : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         theAnimator.SetBool("isCollided", false);
+    }
+
+    IEnumerator DestroyPlayer()
+    {
+        yield return new WaitForSeconds(0.3f);
+        Destroy(gameObject);
     }
 
 }
