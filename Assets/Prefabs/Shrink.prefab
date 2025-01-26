@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4132571310636012040}
   - component: {fileID: 7945858775094161153}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Shrink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
