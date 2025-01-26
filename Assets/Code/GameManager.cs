@@ -20,7 +20,7 @@ public class GameManager:MonoBehaviour
         levelNum += 1;
         string sceneName = "Level"+levelNum.ToString();
 
-        if (levelNum < 5)
+        if (levelNum < numLevels)
         {
             SceneManager.LoadScene(sceneName);
         }
