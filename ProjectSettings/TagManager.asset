@@ -7,6 +7,7 @@ TagManager:
   - Platform
   - BounceBubble
   - BounceBubbleHigh
+  - Spike
   layers:
   - Default
   - TransparentFX
