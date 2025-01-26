@@ -101,15 +101,22 @@ public class PlayerScript : MonoBehaviour
         StartCoroutine(DisableBouncingBool(animationTime));
     }
 
+    public void ActivatePopAnimation()
+    {
+        theAnimator.SetBool("isPopped", true);
+        StartCoroutine(DestroyPlayer());
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Platform")
+        if(collision.gameObject.tag != "Spike")
         {
             ActivateBounceAnimation();
         }
-        else
+        else if(collision.gameObject.tag == "Spike")
         {
             theAnimator.SetBool("isPopped", true);
+            ActivatePopAnimation();
         }
   
     }
@@ -118,6 +125,12 @@ public class PlayerScript : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         theAnimator.SetBool("isCollided", false);
+    }
+
+    IEnumerator DestroyPlayer()
+    {
+        yield return new WaitForSeconds(0.3f);
+        Destroy(gameObject);
     }
 
 }
