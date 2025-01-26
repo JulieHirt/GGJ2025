@@ -16,18 +16,19 @@ public class GameManager:MonoBehaviour
 
     public void Win()
     {
+        int numLevels = 5;//the number of levels in the game
         levelNum += 1;
         string sceneName = "Level"+levelNum.ToString();
 
-        try
+        if (levelNum < 5)
         {
             SceneManager.LoadScene(sceneName);
         }
-        catch
+        else
         {
-            //TODO: Load the win scene if all levels are beaten
-            //SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("Win");
         }
+
     }
 
     public void Update()
