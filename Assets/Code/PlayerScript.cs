@@ -13,11 +13,15 @@ public class PlayerScript : MonoBehaviour
 
     Rigidbody2D rb;
     bool pressedSpace = false;
+    Animator theAnimator;
+    string state = "normal"; // states are normal, bouncing, popped.
+                             // normal -> bouncing -> normal.  or normal -> popped  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        theAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class PlayerScript : MonoBehaviour
         {
             pressedSpace = true;
         }
+
+
     }
 
     private void FixedUpdate()
@@ -51,6 +57,8 @@ public class PlayerScript : MonoBehaviour
         if (pressedSpace == true)
         {
             rb.linearVelocityY = -downSpeed;
+            state = "bouncing";
+
             pressedSpace = false;
             //GetComponent<Collider2D>().isTrigger = true;
         }
@@ -83,6 +91,27 @@ public class PlayerScript : MonoBehaviour
             Destroy(col.gameObject);
         }
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Platform")
+        {
+            theAnimator.SetBool("isCollided", true);
+            float animationTime = theAnimator.GetCurrentAnimatorStateInfo(0).length;
+            StartCoroutine(DisableBouncingBool(animationTime));
+        }
+        else
+        {
+            theAnimator.SetBool("isPopped", true);
+        }
+  
+    }
+
+    IEnumerator DisableBouncingBool(float time)
+    {
+        yield return new WaitForSeconds(time);
+        theAnimator.SetBool("isCollided", false);
     }
 
 }
