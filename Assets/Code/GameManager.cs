@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +11,14 @@ public class GameManager:MonoBehaviour
     }
     public void Lose()
     {
-        //reload the scene when player loses
+        //wait 1 sec then reload the scene when player loses
+        StartCoroutine(Wait());
+
+        
+    }
+    public IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
