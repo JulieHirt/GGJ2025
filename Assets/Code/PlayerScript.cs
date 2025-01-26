@@ -73,7 +73,7 @@ public class PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        
+
         if (col.gameObject.tag == "BounceBubble" || col.gameObject.tag == "BounceBubbleHigh")
         {
             //Rigidbody2D playerRb = col.gameObject.GetComponent<Rigidbody2D>();
@@ -82,24 +82,30 @@ public class PlayerScript : MonoBehaviour
             Vector2 direction = transform.position - col.gameObject.transform.position;
             direction *= playerVector.magnitude;
 
-            if(col.gameObject.tag == "BounceBubbleHigh")
+            if (col.gameObject.tag == "BounceBubbleHigh")
             {
                 direction *= highBounceSpeed;
             }
-            Debug.Log("Collision detected, tag is " + col.gameObject.tag);
             rb.linearVelocity = direction;
             Destroy(col.gameObject);
+
+            ActivateBounceAnimation();
         }
 
+    }
+
+    public void ActivateBounceAnimation()
+    {
+        theAnimator.SetBool("isCollided", true);
+        float animationTime = theAnimator.GetCurrentAnimatorStateInfo(0).length;
+        StartCoroutine(DisableBouncingBool(animationTime));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Platform")
         {
-            theAnimator.SetBool("isCollided", true);
-            float animationTime = theAnimator.GetCurrentAnimatorStateInfo(0).length;
-            StartCoroutine(DisableBouncingBool(animationTime));
+            ActivateBounceAnimation();
         }
         else
         {
