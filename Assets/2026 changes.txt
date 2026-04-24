@@ -1,0 +1,9 @@
+Level 2: on Grow object, set PlayerScale variable to be 0.3 (original value: 0.  This looks like it shouldn't have been 0...)
+Level 3: on Grow object, set PlayerScale variable to 0.11 (original value: 0)
+Level 6: on Grow object, set PlayerScale variable to 0.222585 (original value: 0)
+
+After updating project to Unity 6000.0.73f1 - set BubblesBackgroundFlow prefab's Z position from 0 to 100.  This is to fix those bubbles sometimes being in front of foreground objects (apparently this happened after updating Unity)
+- also made that change in the instance of that prefab in every gameplay level.  Neary all instances had a modified Transform component
+	- exception:  level 7, this one didn't have a BubblesBackgroundFlow object
+
+Added Unity Technologies credit in Credits scene (required by Unity)
